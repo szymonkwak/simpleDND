@@ -3,7 +3,7 @@ interface DroppableBox {
   name: string;
 }
 
-interface Users {
+export interface Users {
   id: string;
   name: string;
   email: string;

@@ -1,28 +1,34 @@
 import React, { ReactNode } from 'react';
+import styled from 'styled-components';
 
 interface DroppableBoxProps {
   boxTitle: string;
   children?: ReactNode;
 }
 
+const DroppableContainer = styled.div`
+  background-color: #333664;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const FlexDiv = styled.div`
+  overflow: hidden;
+  /* width: 40vw; */
+  height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  background-color: #4f539d;
+`;
+
 const DroppableBox = ({ boxTitle, children }: DroppableBoxProps) => {
   return (
-    <div style={{ backgroundColor: '#333664', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <DroppableContainer>
       <h3>{boxTitle}</h3>
-      <div
-        style={{
-          overflow: 'hidden',
-          maxWidth: '40vw',
-          height: '80vh',
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignContent: 'flex-start',
-          backgroundColor: '#4f539d',
-        }}
-      >
-        {children}
-      </div>
-    </div>
+      <FlexDiv>{children}</FlexDiv>
+    </DroppableContainer>
   );
 };
 
